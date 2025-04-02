@@ -1,0 +1,42 @@
+2025-04-02 09:46:47,335 - llm_helper - INFO - Loading environment variables
+2025-04-02 09:46:47,335 - llm_helper - INFO - Initializing database connection
+2025-04-02 09:46:47,345 - llm_helper - INFO - Database connection initialized with dialect: sqlite
+2025-04-02 09:46:47,345 - llm_helper - INFO - Table information: 
+CREATE TABLE books (
+	"ISBN" TEXT, 
+	"Book-Title" TEXT, 
+	"Book-Author" TEXT, 
+	"Year-Of-Publication" TEXT, 
+	"Publisher" TEXT, 
+	"Image-URL-S" TEXT, 
+	"Image-URL-M" TEXT, 
+	"Image-URL-L" TEXT
+)
+
+/*
+3 rows from books table:
+ISBN	Book-Title	Book-Author	Year-Of-Publication	Publisher	Image-URL-S	Image-URL-M	Image-URL-L
+0195153448	Classical Mythology	Mark P. O. Morford	2002	Oxford University Press	http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg	http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg	http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg
+0002005018	Clara Callan	Richard Bruce Wright	2001	HarperFlamingo Canada	http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg	http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg	http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg
+0060973129	Decision in Normandy	Carlo D'Este	1991	HarperPerennial	http://images.amazon.com/images/P/0060973129.01.THUMBZZZ.jpg	http://images.amazon.com/images/P/0060973129.01.MZZZZZZZ.jpg	http://images.amazon.com/images/P/0060973129.01.LZZZZZZZ.jpg
+*/
+2025-04-02 09:46:47,345 - llm_helper - INFO - Initializing LLM and tools
+2025-04-02 09:46:47,368 - llm_helper - INFO - Building state graph
+2025-04-02 09:46:47,372 - llm_helper - INFO - State graph compiled successfully
+2025-04-02 09:46:47,373 - __main__ - INFO - Successfully connected to database at /Users/ankanmahapatra/Desktop/genAI/BookWormAI/backend/books.db
+2025-04-02 09:46:47,374 - __main__ - INFO - Starting Flask application
+2025-04-02 09:46:47,376 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 09:46:47,376 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 09:47:13,357 - __main__ - INFO - LLM invocation request with query: find number of books in database
+2025-04-02 09:47:13,358 - llm_helper - INFO - Processing query with thread_id 1: find number of books in database
+2025-04-02 09:47:18,429 - llm_helper - INFO - Messages received from state graph: {'messages': [HumanMessage(content='find number of books in database', additional_kwargs={}, response_metadata={}, id='578e6c6c-41f1-4520-ba0c-3dfe9ccd7aa1'), AIMessage(content='I do not have the ability to directly count the number of books in a database without knowing the structure and content of the database. To assist you, I need more information. If you can provide details about the database (e.g., the table name where book information is stored), I can construct a query to count the books.', additional_kwargs={}, response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.0-flash', 'safety_ratings': []}, id='run-315f9c42-f0ff-4dc1-99f8-294ee6ffc453-0', usage_metadata={'input_tokens': 98, 'output_tokens': 68, 'total_tokens': 166, 'input_token_details': {'cache_read': 0}})]}
+2025-04-02 09:47:18,430 - llm_helper - INFO - Query processed successfully
+2025-04-02 09:47:18,430 - __main__ - INFO - LLM invocation successful
+2025-04-02 09:47:18,430 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:47:18] "POST /llm/invoke HTTP/1.1" 200 -
+2025-04-02 09:47:30,877 - __main__ - INFO - Searching books with term: And then there were none
+2025-04-02 09:47:30,963 - __main__ - INFO - Search returned 10 results
+2025-04-02 09:47:30,964 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:47:30] "POST /books/search HTTP/1.1" 200 -
+2025-04-02 09:47:35,582 - __main__ - INFO - Fetching all books
+2025-04-02 09:47:35,583 - __main__ - INFO - Successfully retrieved 10 books
+2025-04-02 09:47:35,583 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:47:35] "GET /books HTTP/1.1" 200 -
