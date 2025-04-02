@@ -1,6 +1,6 @@
 MODEL = "gemini-2.0-flash"
-DB_PATH = r"/Users/ankanmahapatra/Desktop/genAI/BookWormAI/backend/books.db"
-DB_URI = r"sqlite:////Users/ankanmahapatra/Desktop/genAI/BookWormAI/backend/books.db"
+DB_PATH = "books.db"
+DB_URI = "sqlite:///books.db"
 LIMIT_ROWS = 10
 
 TEXT_TO_SQL_PROMPT = """

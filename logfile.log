@@ -40,3 +40,75 @@ ISBN	Book-Title	Book-Author	Year-Of-Publication	Publisher	Image-URL-S	Image-URL-
 2025-04-02 09:47:35,582 - __main__ - INFO - Fetching all books
 2025-04-02 09:47:35,583 - __main__ - INFO - Successfully retrieved 10 books
 2025-04-02 09:47:35,583 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 09:47:35] "GET /books HTTP/1.1" 200 -
+2025-04-02 10:20:09,867 - llm_helper - INFO - Loading environment variables
+2025-04-02 10:20:09,869 - llm_helper - INFO - Initializing database connection
+2025-04-02 10:20:09,881 - llm_helper - INFO - Database connection initialized with dialect: sqlite
+2025-04-02 10:20:09,881 - llm_helper - INFO - Table information: 
+CREATE TABLE books (
+	"ISBN" TEXT, 
+	"Book-Title" TEXT, 
+	"Book-Author" TEXT, 
+	"Year-Of-Publication" TEXT, 
+	"Publisher" TEXT, 
+	"Image-URL-S" TEXT, 
+	"Image-URL-M" TEXT, 
+	"Image-URL-L" TEXT
+)
+
+/*
+3 rows from books table:
+ISBN	Book-Title	Book-Author	Year-Of-Publication	Publisher	Image-URL-S	Image-URL-M	Image-URL-L
+0195153448	Classical Mythology	Mark P. O. Morford	2002	Oxford University Press	http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg	http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg	http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg
+0002005018	Clara Callan	Richard Bruce Wright	2001	HarperFlamingo Canada	http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg	http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg	http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg
+0060973129	Decision in Normandy	Carlo D'Este	1991	HarperPerennial	http://images.amazon.com/images/P/0060973129.01.THUMBZZZ.jpg	http://images.amazon.com/images/P/0060973129.01.MZZZZZZZ.jpg	http://images.amazon.com/images/P/0060973129.01.LZZZZZZZ.jpg
+*/
+2025-04-02 10:20:09,881 - llm_helper - INFO - Initializing LLM and tools
+2025-04-02 10:20:09,897 - llm_helper - INFO - Building state graph
+2025-04-02 10:20:09,902 - llm_helper - INFO - State graph compiled successfully
+2025-04-02 10:20:09,903 - __main__ - INFO - Successfully connected to database at /Users/ankanmahapatra/Desktop/genAI/BookWormAI/backend/books.db
+2025-04-02 10:20:09,903 - __main__ - INFO - Starting Flask application
+2025-04-02 10:20:09,905 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 10:20:09,905 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 10:21:30,081 - __main__ - INFO - Fetching all books
+2025-04-02 10:21:30,083 - __main__ - INFO - Successfully retrieved 10 books
+2025-04-02 10:21:30,086 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 10:21:30] "GET /books HTTP/1.1" 200 -
+2025-04-02 10:21:32,838 - __main__ - INFO - LLM invocation request with query: find number of books in database
+2025-04-02 10:21:32,839 - llm_helper - INFO - Processing query with thread_id 1: find number of books in database
+2025-04-02 10:21:37,256 - llm_helper - INFO - Messages received from state graph: {'messages': [HumanMessage(content='find number of books in database', additional_kwargs={}, response_metadata={}, id='e8c81641-1ea0-4446-89c8-a8fbbb159d8a'), AIMessage(content='I do not have the ability to directly access the database and count the number of books. However, I can help you construct a query to achieve this. Would you like me to create a query that counts the number of books in the database?', additional_kwargs={}, response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.0-flash', 'safety_ratings': []}, id='run-f9ddae6e-2149-4753-a233-7aaab98d8d52-0', usage_metadata={'input_tokens': 98, 'output_tokens': 50, 'total_tokens': 148, 'input_token_details': {'cache_read': 0}})]}
+2025-04-02 10:21:37,257 - llm_helper - INFO - Query processed successfully
+2025-04-02 10:21:37,257 - __main__ - INFO - LLM invocation successful
+2025-04-02 10:21:37,258 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 10:21:37] "POST /llm/invoke HTTP/1.1" 200 -
+2025-04-02 10:47:11,505 - llm_helper - INFO - Loading environment variables
+2025-04-02 10:47:11,506 - llm_helper - INFO - Initializing database connection
+2025-04-02 10:47:11,516 - llm_helper - INFO - Database connection initialized with dialect: sqlite
+2025-04-02 10:47:11,516 - llm_helper - INFO - Table information: 
+CREATE TABLE books (
+	"ISBN" TEXT, 
+	"Book-Title" TEXT, 
+	"Book-Author" TEXT, 
+	"Year-Of-Publication" TEXT, 
+	"Publisher" TEXT, 
+	"Image-URL-S" TEXT, 
+	"Image-URL-M" TEXT, 
+	"Image-URL-L" TEXT
+)
+
+/*
+3 rows from books table:
+ISBN	Book-Title	Book-Author	Year-Of-Publication	Publisher	Image-URL-S	Image-URL-M	Image-URL-L
+0195153448	Classical Mythology	Mark P. O. Morford	2002	Oxford University Press	http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg	http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg	http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg
+0002005018	Clara Callan	Richard Bruce Wright	2001	HarperFlamingo Canada	http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg	http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg	http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg
+0060973129	Decision in Normandy	Carlo D'Este	1991	HarperPerennial	http://images.amazon.com/images/P/0060973129.01.THUMBZZZ.jpg	http://images.amazon.com/images/P/0060973129.01.MZZZZZZZ.jpg	http://images.amazon.com/images/P/0060973129.01.LZZZZZZZ.jpg
+*/
+2025-04-02 10:47:11,516 - llm_helper - INFO - Initializing LLM and tools
+2025-04-02 10:47:11,546 - llm_helper - INFO - Building state graph
+2025-04-02 10:47:11,550 - llm_helper - INFO - State graph compiled successfully
+2025-04-02 10:47:11,551 - __main__ - INFO - Successfully connected to database at books.db
+2025-04-02 10:47:11,552 - __main__ - INFO - Starting Flask application
+2025-04-02 10:47:11,554 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 10:47:11,554 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 10:47:20,240 - __main__ - INFO - Fetching all books
+2025-04-02 10:47:20,242 - __main__ - INFO - Successfully retrieved 10 books
+2025-04-02 10:47:20,243 - werkzeug - INFO - 127.0.0.1 - - [02/Apr/2025 10:47:20] "GET /books HTTP/1.1" 200 -
